@@ -99,7 +99,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 const SizedBox(height: 30,),
                 Container(
-                  margin: EdgeInsets.all(10),
+                  margin: const EdgeInsets.all(10),
                   child: Form(key: formKey,
                     child: Column(
                         children: <Widget>[
@@ -276,7 +276,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                 color: Colors.black,
                               ),),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           Text("Already have an account?",
                             textAlign: TextAlign.center,
                             style: GoogleFonts.openSans(
@@ -291,7 +291,7 @@ class _SignUpPageState extends State<SignUpPage> {
                               fontWeight: FontWeight.w400,
                               color: Colors.yellowAccent,
                             ),),
-                          SizedBox(height: 30,),
+                          const SizedBox(height: 30,),
                         ]
                     ),
                   ),
