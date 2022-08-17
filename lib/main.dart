@@ -102,8 +102,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   margin: const EdgeInsets.all(10),
                   child: Form(key: formKey,
                     child: Column(
-                        children: <Widget>[
-                          //Full name field
+                        children: [
                           TextFormField(
                             validator: (String? val){
                               if(val!.isEmpty){
@@ -114,10 +113,6 @@ class _SignUpPageState extends State<SignUpPage> {
                             decoration: const InputDecoration(
                                 hintText: "Full Name"
                             ),
-                            // style: GoogleFonts.openSans(
-                            //     fontSize: 12,
-                            //     fontWeight: FontWeight.w400,
-                            //     color: const Color(0XFF030303)),
                           ),
 
                           //User name filed
@@ -140,20 +135,36 @@ class _SignUpPageState extends State<SignUpPage> {
 
                           //Phone number field
                           const SizedBox(height: 30,),
-                          TextFormField(
-                            validator: (String? val){
-                              if(val!.isEmpty){
-                                return "enter phone number";
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                hintText: "+234         Telephone"
-                            ),
-                            // style: GoogleFonts.openSans(
-                            //     fontSize: 12,
-                            //     fontWeight: FontWeight.w400,
-                            //     color: const Color(0XFF030303)),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  validator: (String? val){
+                                    if(val!.isEmpty){
+                                      return "Nigeria\'s code";
+                                    }
+                                    return null;
+                                  },
+                                  decoration: const InputDecoration(
+                                      hintText: "+234"
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 50,),
+                              Expanded(child:
+                              TextFormField(
+                                validator: (String? val){
+                                  if(val!.isEmpty){
+                                    return "enter phone number";
+                                  }
+                                  return null;
+                                },
+                                decoration: const InputDecoration(
+                                    hintText: "Telephone"
+                                ),
+                              ),),
+                              SizedBox(width: 27,),
+                            ],
                           ),
 
                           //Email field....
@@ -176,16 +187,35 @@ class _SignUpPageState extends State<SignUpPage> {
 
                           //Date of birth and Gender field....
                           const SizedBox(height: 30,),
-                          TextFormField(
-                            validator: (String? val){
-                              if(val!.isEmpty){
-                                return "enter Date of Birth, gender is empty";
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                hintText: "Date of Birth        Gender"
-                            ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  validator: (String? val){
+                                    if(val!.isEmpty){
+                                      return "enter Date of Birth";
+                                    }
+                                    return null;
+                                  },
+                                  decoration: const InputDecoration(
+                                      hintText: "Date of Birth"
+                                  ),
+                                ),
+                              ),
+                              SizedBox(width: 44,),
+                              Expanded(child: TextFormField(
+                                validator: (String? val){
+                                  if(val!.isEmpty){
+                                    return "Gender is empty";
+                                  }
+                                  return null;
+                                },
+                                decoration: const InputDecoration(
+                                    hintText: "Gender"
+                                ),
+                              ),),
+                              SizedBox(width: 97,),
+                            ],
                           ),
 
                           //Relationship Status field....
